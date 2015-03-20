@@ -5,7 +5,7 @@ public class StringCalculator {
 	public int add(String string){
 		if (string.length() == 0)
 		return 0;
-	return suma(string.split(","));
+	return suma(string.split(",|\n"));
 	}
 
 	private int suma(String[] valoresCadena) {

@@ -13,6 +13,8 @@ public class StringCalculatorTest {
 		assertEquals(1, calculator.add("1"));
 		assertEquals(2, calculator.add("2"));
 		assertEquals(4, calculator.add("2,2"));
+		assertEquals(7, calculator.add("2,2,3"));
+		assertEquals(6, calculator.add("1\n2\n3"));
 	}
 		
 	
