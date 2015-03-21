@@ -43,11 +43,16 @@ public class StringCalculator {
 	private int sumaValidacionesNegativos(String[] valorescadena, int total) {
 		for (String valor : valorescadena) {
 			Integer valorNumerico = Integer.valueOf(valor);
-			total += valorNumerico;
-			if (valorNumerico > 1000)
-				total -= valorNumerico;
+			total = sumaTotal(total, valorNumerico);
 			almacenarNegativos(negativos, valorNumerico);
 		}
+		return total;
+	}
+
+	private int sumaTotal(int total, Integer valorNumerico) {
+		total += valorNumerico;
+		if (valorNumerico > 1000)
+			total -= valorNumerico;
 		return total;
 	}
 
