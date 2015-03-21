@@ -35,14 +35,17 @@ public class StringCalculator {
 
 	private int suma(String[] valorescadena) {
 		int total = 0;
-		
+		total = sumaValidacionesNegativos(valorescadena, total);
+		listaNegativos(negativos);
+		return total;
+	}
+
+	private int sumaValidacionesNegativos(String[] valorescadena, int total) {
 		for (String valor : valorescadena) {
 			Integer valorNumerico = Integer.valueOf(valor);
 			total += valorNumerico;
 			almacenarNegativos(negativos, valorNumerico);
 		}
-		listaNegativos(negativos);
-			
 		return total;
 	}
 

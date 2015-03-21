@@ -30,7 +30,7 @@ public class StringCalculatorTest {
 	@Test
 	public void negativeException(){
 		try {
-			calculator.add("-3,-1,2,2");
+			calculator.add("3,-1,2,2");
 			fail();
 		} catch (Exception e) {
 			System.out.println(e);
