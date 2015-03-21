@@ -1,8 +1,16 @@
 package stringCalculator;
 
+import java.util.ArrayList;
+import java.util.List;
+
+
+
 public class StringCalculator {
 	
+	
+	
 	private String delimitador = ",|\n";
+	private List<Integer> negativos = new ArrayList<Integer>();
 	
 	public int add(String string){
 		if (string.length() == 0)
@@ -27,10 +35,26 @@ public class StringCalculator {
 
 	private int suma(String[] valorescadena) {
 		int total = 0;
+		
 		for (String valor : valorescadena) {
-			total += Integer.valueOf(valor);
+			Integer valorNumerico = Integer.valueOf(valor);
+			total += valorNumerico;
+			almacenarNegativos(negativos, valorNumerico);
 		}
+		listaNegativos(negativos);
+			
 		return total;
+	}
+
+	private void listaNegativos(List<Integer> negativos) {
+		if (!negativos.isEmpty())
+			throw new RuntimeException("No se soportan negativos" + negativos);
+	}
+
+	private void almacenarNegativos(List<Integer> negativos,
+			Integer valorNumerico) {
+		if (valorNumerico < 0)
+		negativos.add(valorNumerico);
 	}
 	
 

@@ -1,6 +1,7 @@
 package stringCalculator;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
@@ -24,6 +25,17 @@ public class StringCalculatorTest {
 	public void newDelimiter(){
 		assertEquals(3, calculator.add("//,\n1,2"));
 		assertEquals(3, calculator.add("//;\n1;2"));
+	}
+	
+	@Test
+	public void negativeException(){
+		try {
+			calculator.add("-3,-1,2,2");
+			fail();
+		} catch (Exception e) {
+			System.out.println(e);
+			
+		}
 	}
 		
 	
