@@ -17,8 +17,8 @@ public class StringCalculatorTest {
 		assertEquals(4, calculator.add("2,2"));
 		assertEquals(7, calculator.add("2,2,3"));
 		assertEquals(6, calculator.add("1\n2\n3"));
-		
-		
+		assertEquals(6, calculator.add("1\n2\n3"));
+		assertEquals(5, calculator.add("2000,2,3"));
 	}
 	
 	@Test

@@ -44,6 +44,8 @@ public class StringCalculator {
 		for (String valor : valorescadena) {
 			Integer valorNumerico = Integer.valueOf(valor);
 			total += valorNumerico;
+			if (valorNumerico > 1000)
+				total -= valorNumerico;
 			almacenarNegativos(negativos, valorNumerico);
 		}
 		return total;
