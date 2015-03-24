@@ -38,23 +38,32 @@ public class StringCalculator {
 		if (string.startsWith("//")){
 			delimitador = string.substring(inicio,fin);
 			delimitadorIncremental = delimitador;
-			do{
-				p = string.substring(inicio+1,fin+1);
-					
-				if (delimitador.equals(p)){
-					delimitadorIncremental = delimitadorIncremental + delimitador;
-					System.out.println(delimitadorIncremental);
-					inicioValores++;
-					inicio++;
-					fin++;
-				}
-			
-			}while (delimitador.equals(p));
+			delimitadorIncremental = delimitadorIncremental(string,delimitadorIncremental);
 		delimitador = delimitadorIncremental;
 		}
 		
 		if(delimitador.equals("*"))
 			delimitador = "\\" + delimitador; 
+	}
+
+	private String delimitadorIncremental(String string,String delimitadorIncremental) {
+			String p;
+			do{
+				p = string.substring(inicio+1,fin+1);
+				delimitadorIncremental = condicionDelimitador(delimitadorIncremental, p);
+			}while (delimitador.equals(p));
+		return delimitadorIncremental;
+	}
+
+	private String condicionDelimitador(String delimitadorIncremental, String p) {
+		if (delimitador.equals(p)){
+			delimitadorIncremental = delimitadorIncremental + delimitador;
+			System.out.println(delimitadorIncremental);
+			inicioValores++;
+			inicio++;
+			fin++;
+		}
+		return delimitadorIncremental;
 	}
 
 	private int suma(String[] valorescadena) {
