@@ -2,14 +2,15 @@ package stringCalculator;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.regex.*;
 
 
 public class StringCalculator {
 	
+	private int inicio = 2;
+	private int fin = 3;
 	
-	
-	private String delimitador = ",|\n";
+	private String delimitador = ",|\n|\\*";
 	private List<Integer> negativos = new ArrayList<Integer>();
 	
 	public int add(String string){
@@ -29,8 +30,12 @@ public class StringCalculator {
 	}
 
 	private void asignarDelimitador(String string) {
-		if (string.startsWith("//"))
+		if (string.startsWith("//")){
 			delimitador = string.substring(2,3);
+		if(delimitador.equals("*"))
+			delimitador = "\\" + delimitador; 
+			}
+		
 	}
 
 	private int suma(String[] valorescadena) {

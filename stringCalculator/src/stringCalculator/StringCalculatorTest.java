@@ -19,12 +19,13 @@ public class StringCalculatorTest {
 		assertEquals(6, calculator.add("1\n2\n3"));
 		assertEquals(6, calculator.add("1\n2\n3"));
 		assertEquals(5, calculator.add("2000,2,3"));
+		
 	}
 	
 	@Test
 	public void newDelimiter(){
 		assertEquals(3, calculator.add("//,\n1,2"));
-		assertEquals(3, calculator.add("//;\n1;2"));
+		assertEquals(3, calculator.add("//*\n1*2"));
 	}
 	
 	@Test
@@ -36,6 +37,12 @@ public class StringCalculatorTest {
 			System.out.println(e);
 			
 		}
+	}
+	
+	@Test
+	public void multipleDelimiters(){
+		
+		assertEquals(6, calculator.add("//%%\n1%%2%%3"));
 	}
 		
 	
