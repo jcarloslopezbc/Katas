@@ -44,7 +44,7 @@ public class StringCalculatorTest {
 	@Test
 	public void multipleDelimiters(){
 		
-		assertEquals(6, calculator.add("//%%n1%%2%%3"));
+		assertEquals(6, calculator.add("//%%%%\n1%%%%2%%%%3"));
 	}
 		
 	
