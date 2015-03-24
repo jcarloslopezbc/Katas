@@ -3,11 +3,13 @@ package stringCalculator;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class StringCalculatorTest {
 
 	private StringCalculator calculator = new StringCalculator();
+	
 	@Test
 	public void emptyString() {
 		
@@ -42,7 +44,7 @@ public class StringCalculatorTest {
 	@Test
 	public void multipleDelimiters(){
 		
-		assertEquals(6, calculator.add("//%%\n1%%2%%3"));
+		assertEquals(6, calculator.add("//%%n1%%2%%3"));
 	}
 		
 	

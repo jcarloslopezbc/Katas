@@ -9,6 +9,7 @@ public class StringCalculator {
 	
 	private int inicio = 2;
 	private int fin = 3;
+	private int inicioValores = 4;
 	
 	private String delimitador = ",|\n|\\*";
 	private List<Integer> negativos = new ArrayList<Integer>();
@@ -25,16 +26,29 @@ public class StringCalculator {
 
 	private String determinarValores(String string, String valores) {
 		if (string.startsWith("//"))
-			valores  = string.substring(4);
+			valores  = string.substring(inicioValores);
+			
 		return valores;
 	}
 
 	private void asignarDelimitador(String string) {
 		if (string.startsWith("//")){
-			delimitador = string.substring(2,3);
-		if(delimitador.equals("*"))
-			delimitador = "\\" + delimitador; 
+			delimitador = string.substring(inicio,fin);
+			String p = string.substring(inicio+1,fin+1);
+			System.out.println(delimitador);
+			System.out.println(p);
+			
+			if (delimitador.equals(p)){
+				delimitador = delimitador + p;
+				System.out.println(delimitador);
+				inicioValores++;
 			}
+				
+		}
+		
+			if(delimitador.equals("*"))
+			delimitador = "\\" + delimitador; 
+			
 		
 	}
 
