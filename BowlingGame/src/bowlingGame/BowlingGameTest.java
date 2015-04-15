@@ -6,6 +6,7 @@ public class BowlingGameTest {
 
 	@Test
 	public void createGame(){
-		BowlingGame game = new BowlingGame();
+		Game game = new Game();
 	}
+	
 }
