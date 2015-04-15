@@ -1,5 +1,8 @@
 package bowlingGame;
 
+import static org.junit.Assert.*;
+
+import org.junit.Assert;
 import org.junit.Test;
 
 public class BowlingGameTest {
@@ -14,6 +17,15 @@ public class BowlingGameTest {
 	@Test
 	public void oneRoll(){
 		game.roll(0);
+	}
+	
+	@Test
+	public void allGameGutters(){
+		for (int i = 0; i < 20; i++) {
+			game.roll(0);
+		}
+		
+		assertEquals(0, game.score());
 	}
 	
 }
