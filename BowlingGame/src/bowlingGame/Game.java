@@ -2,13 +2,15 @@ package bowlingGame;
 
 public class Game {
 
+	private int score = 0;
+	
 	public int roll(int pins) {
-		return pins;
-			
+		score += pins;
+		return pins;			
 	}
 
 	public int score() {
-		return 0;
+		return score; 
 	}
 
 }
