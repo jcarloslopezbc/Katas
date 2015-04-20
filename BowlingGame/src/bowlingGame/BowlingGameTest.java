@@ -3,6 +3,7 @@ package bowlingGame;
 import static org.junit.Assert.*;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class BowlingGameTest {
@@ -41,8 +42,8 @@ public class BowlingGameTest {
 		assertEquals(16, game.score());
 	}
 	
-	private void loopBowling(int n, int pins) {
-		for (int i = 0; i < n; i++)
+	private void loopBowling(int shoots, int pins) {
+		for (int i = 0; i < shoots; i++)
 			game.roll(pins);
 	}
 	
