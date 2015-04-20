@@ -14,7 +14,12 @@ public class Game {
 	public int score() {
 		int firstBall = 0;
 		for (int frame = 0; frame < 10; frame++) {
-			if (spare(firstBall)){
+			if(rolls[firstBall] == 10)
+			{
+				score += rolls[firstBall + 1] + rolls[firstBall + 2] + 10;
+				firstBall++;
+			}
+			else if (spare(firstBall)){
 				score += rolls[firstBall + 2] + 10;
 				firstBall +=2;
 			}
