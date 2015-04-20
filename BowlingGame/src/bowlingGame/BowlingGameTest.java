@@ -21,17 +21,22 @@ public class BowlingGameTest {
 	
 	@Test
 	public void allGameGutters(){
-		for (int i = 0; i < 20; i++)
-			game.roll(0);
+		loopBowling(0, 0);
 		assertEquals(0, game.score());
 	}
+
+	
 	
 	@Test
 	public void allRollsOne(){
-		for (int i = 0; i < 20; i++)
-			game.roll(1);
+		loopBowling(20, 1);
 		assertEquals(20, game.score());
 		
+	}
+	
+	private void loopBowling(int n, int pins) {
+		for (int i = 0; i < n; i++)
+			game.roll(pins);
 	}
 	
 }
