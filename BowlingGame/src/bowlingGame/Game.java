@@ -14,7 +14,7 @@ public class Game {
 	public int score() {
 		int firstBall = 0;
 		for (int frame = 0; frame < 10; frame++) {
-			if(rolls[firstBall] == 10)
+			if(strike(firstBall))
 			{
 				score += rolls[firstBall + 1] + rolls[firstBall + 2] + 10;
 				firstBall++;
@@ -29,6 +29,10 @@ public class Game {
 			}
 		}
 		return score;
+	}
+
+	private boolean strike(int firstBall) {
+		return rolls[firstBall] == 10;
 	}
 
 	private boolean spare(int firstBall) {

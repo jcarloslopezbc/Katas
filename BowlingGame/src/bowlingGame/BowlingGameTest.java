@@ -57,6 +57,14 @@ public class BowlingGameTest {
 		
 	}
 	
+	@Test
+	public void perfectGame() throws Exception {
+		loopBowling(12, 10);
+		assertEquals(300, game.score());
+		
+	}
+	
+	
 	
 	
 }
