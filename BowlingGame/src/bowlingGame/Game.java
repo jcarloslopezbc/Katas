@@ -12,18 +12,22 @@ public class Game {
 	}
 
 	public int score() {
-		int i = 0;
+		int firstBall = 0;
 		for (int frame = 0; frame < 10; frame++) {
-			if (rolls[i] + rolls[i + 1] == 10){
-				score += rolls[i + 2] + 10;
-				i +=2;
+			if (spare(firstBall)){
+				score += rolls[firstBall + 2] + 10;
+				firstBall +=2;
 			}
 			else{
-				score += rolls[i] + rolls[i + 1];
-				i += 2;
+				score += rolls[firstBall] + rolls[firstBall + 1];
+				firstBall += 2;
 			}
 		}
 		return score;
+	}
+
+	private boolean spare(int firstBall) {
+		return rolls[firstBall] + rolls[firstBall + 1] == 10;
 	}
 
 }

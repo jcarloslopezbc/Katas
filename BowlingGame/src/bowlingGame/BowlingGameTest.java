@@ -10,6 +10,11 @@ public class BowlingGameTest {
 
 	private Game game = new Game();
 	
+	private void loopBowling(int shoots, int pins) {
+		for (int i = 0; i < shoots; i++)
+			game.roll(pins);
+	}
+	
 	@Test
 	public void createGame(){
 		 
@@ -42,9 +47,16 @@ public class BowlingGameTest {
 		assertEquals(16, game.score());
 	}
 	
-	private void loopBowling(int shoots, int pins) {
-		for (int i = 0; i < shoots; i++)
-			game.roll(pins);
+	@Test
+	public void strike() throws Exception {
+		game.roll(10);
+		game.roll(5);
+		game.roll(5);
+		loopBowling(16, 0);
+		assertEquals(30, game.score());
+		
 	}
+	
+	
 	
 }
