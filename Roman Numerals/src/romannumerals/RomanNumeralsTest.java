@@ -10,6 +10,7 @@ public class RomanNumeralsTest {
 	public void oneTwoThreeToRoman(){
 		assertEquals("I", RomanNumerals.numberToRoman(1));
 		assertEquals("II", RomanNumerals.numberToRoman(2));
+		assertEquals("III", RomanNumerals.numberToRoman(3));
 	}
 
 }
