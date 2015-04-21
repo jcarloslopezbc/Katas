@@ -2,8 +2,9 @@ package romannumerals;
 
 public class RomanNumerals {
 
-	public static Object numberToRoman(int i) {
+	public static String numberToRoman(int number) {
 		return "I";
+		
 	}
 
 }
