@@ -17,5 +17,10 @@ public class RomanNumeralsTest {
 	public void four() throws Exception {
 		assertEquals("IV", RomanNumerals.numberToRoman(4));
 	}
+	
+	@Test
+	public void five() throws Exception {
+		assertEquals("V", RomanNumerals.numberToRoman(5));
+	}
 
 }
