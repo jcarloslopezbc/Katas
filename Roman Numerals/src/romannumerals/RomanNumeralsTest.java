@@ -24,8 +24,15 @@ public class RomanNumeralsTest {
 	}
 	
 	@Test
-	public void six() throws Exception {
+	public void sixSevenEightToRoman() throws Exception {
 		assertEquals("VI", RomanNumerals.numberToRoman(6));
+		assertEquals("VII", RomanNumerals.numberToRoman(7));
+		assertEquals("VIII", RomanNumerals.numberToRoman(8));
+	}
+	
+	@Test
+	public void nine() throws Exception {
+		assertEquals("IX", RomanNumerals.numberToRoman(9));
 	}
 
 }
