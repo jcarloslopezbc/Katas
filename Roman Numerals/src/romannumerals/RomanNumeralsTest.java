@@ -22,5 +22,10 @@ public class RomanNumeralsTest {
 	public void five() throws Exception {
 		assertEquals("V", RomanNumerals.numberToRoman(5));
 	}
+	
+	@Test
+	public void six() throws Exception {
+		assertEquals("VI", RomanNumerals.numberToRoman(6));
+	}
 
 }
