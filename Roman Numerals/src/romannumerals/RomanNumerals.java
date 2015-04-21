@@ -3,9 +3,11 @@ package romannumerals;
 public class RomanNumerals {
 
 	public static String numberToRoman(int number) {
+		StringBuilder result = new StringBuilder();
 		if (number == 2)
-			return "II";
-		return "I";
+			result.append("I");
+		result.append("I");
+		return result.toString();
 		
 	}
 
