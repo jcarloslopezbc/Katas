@@ -34,5 +34,10 @@ public class RomanNumeralsTest {
 	public void nine() throws Exception {
 		assertEquals("IX", RomanNumerals.numberToRoman(9));
 	}
+	
+	@Test
+	public void ten() throws Exception {
+		assertEquals("XIX", RomanNumerals.numberToRoman(19));
+	}
 
 }

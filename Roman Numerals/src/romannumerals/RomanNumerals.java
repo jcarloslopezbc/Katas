@@ -2,8 +2,8 @@ package romannumerals;
 
 public class RomanNumerals {
 
-	private static int[] VALUES = {9, 5, 4 };
-	private static String[] SYMBOLS = {"IX", "V", "IV"};
+	private static int[] VALUES = {20, 10,9, 5, 4 };
+	private static String[] SYMBOLS = {"XX","X", "IX", "V", "IV"};
 	
 	public static String numberToRoman(int number) {
 		StringBuilder result = new StringBuilder();
