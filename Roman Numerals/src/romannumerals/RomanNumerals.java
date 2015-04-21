@@ -4,17 +4,19 @@ public class RomanNumerals {
 
 	public static String numberToRoman(int number) {
 		StringBuilder result = new StringBuilder();
-		if (number == 6 ){
-			result.append("VI");
-		}else if (number == 5){
+		int remainder = 0;
+		remainder = number;
+		if (remainder >= 5){
 			result.append("V");
-		} else if (number == 4) {
+			remainder -= 5;
+		}
+		if (remainder == 4) {
 			result.append("IV");
-		} else{
-			for (int i = 0; i < number; i++) {
+			remainder -= 4;
+		}
+		for (int i = 0; i < remainder; i++) {
 			result.append("I");
 			}
-		}
 		return result.toString();
 	}
 	
